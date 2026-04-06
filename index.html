@@ -149,6 +149,94 @@
             background: rgba(255,255,255,0.12);
         }
 
+        /* Waitlist */
+        .waitlist {
+            text-align: center;
+            padding: 0 24px 60px;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .waitlist-counter {
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 16px;
+        }
+
+        .waitlist-counter strong {
+            color: #ffffff;
+        }
+
+        .waitlist-form {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .waitlist-form input[type="email"] {
+            flex: 1;
+            max-width: 320px;
+            padding: 14px 18px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.06);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .waitlist-form input[type="email"]::placeholder {
+            color: rgba(255,255,255,0.35);
+        }
+
+        .waitlist-form input[type="email"]:focus {
+            border-color: rgba(255,255,255,0.4);
+        }
+
+        .waitlist-form button {
+            padding: 14px 24px;
+            border-radius: 12px;
+            border: none;
+            background: #ffffff;
+            color: #0f1729;
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            white-space: nowrap;
+        }
+
+        .waitlist-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(255,255,255,0.15);
+        }
+
+        .waitlist-form button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .waitlist-message {
+            margin-top: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            min-height: 20px;
+        }
+
+        .waitlist-message.success {
+            color: rgba(34,197,94,0.9);
+        }
+
+        .waitlist-message.error {
+            color: rgba(239,68,68,0.9);
+        }
+
         /* Features */
         .features {
             display: grid;
@@ -292,6 +380,45 @@
             font-size: 12px;
         }
 
+        /* Contact */
+        .contact {
+            text-align: center;
+            padding: 60px 24px 80px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .contact p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 24px;
+        }
+
+        .contact-email {
+            display: inline-block;
+            font-size: 18px;
+            font-weight: 600;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 28px;
+            border-radius: 12px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: background 0.2s;
+        }
+
+        .contact-email:hover {
+            background: rgba(255,255,255,0.12);
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -398,6 +525,9 @@
             .hero { padding: 48px 20px 40px; }
             .cta-group { flex-direction: column; align-items: center; }
             .btn-primary, .btn-secondary { width: 100%; justify-content: center; max-width: 320px; }
+            .waitlist-form { flex-direction: column; align-items: center; }
+            .waitlist-form input[type="email"] { max-width: 100%; width: 100%; }
+            .waitlist-form button { width: 100%; }
             .price-cards { flex-direction: column; align-items: center; }
             .price-card { max-width: 100%; }
         }
@@ -409,7 +539,7 @@
         <div class="nav-links">
             <a href="#features">Features</a>
             <a href="#pricing">Pricing</a>
-            <a href="mailto:support@jitsify.app">Contact</a>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 
@@ -421,15 +551,22 @@
             Annotate rolling footage, map techniques, and see your game like never before.
         </p>
         <div class="cta-group">
-            <!-- Replace # with your actual App Store link -->
-            <a href="#" class="btn-primary">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 21.99 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 21.99C7.79 22.03 6.8 20.68 5.96 19.47C4.25 16.99 2.97 12.5 4.7 9.45C5.55 7.93 7.13 6.96 8.84 6.94C10.12 6.92 11.32 7.82 12.11 7.82C12.89 7.82 14.37 6.74 15.92 6.9C16.57 6.93 18.39 7.16 19.56 8.87C19.47 8.93 17.23 10.24 17.25 12.97C17.28 16.23 20.05 17.27 20.09 17.28C20.06 17.36 19.61 18.92 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/></svg>
-                Download on the App Store
+            <a href="#waitlist" class="btn-primary">
+                Join the Waitlist
             </a>
             <a href="#features" class="btn-secondary">
                 See features
             </a>
         </div>
+    </section>
+
+    <section class="waitlist" id="waitlist">
+        <div class="waitlist-counter"><strong>545</strong> people already joined the waitlist</div>
+        <form class="waitlist-form" id="waitlistForm" onsubmit="submitWaitlist(event)">
+            <input type="email" id="waitlistEmail" placeholder="Enter your email" required>
+            <button type="submit" id="waitlistBtn">Join the Waitlist</button>
+        </form>
+        <div class="waitlist-message" id="waitlistMessage"></div>
     </section>
 
     <section class="mockup-section">
@@ -523,13 +660,52 @@
         </div>
     </section>
 
+    <section class="contact" id="contact">
+        <h2>Get in touch</h2>
+        <p>Have questions, feedback, or just want to say hey? We'd love to hear from you.</p>
+        <a href="mailto:hello@jitsify.app" class="contact-email">hello@jitsify.app</a>
+    </section>
+
     <footer>
         <div class="footer-links">
-            <a href="mailto:support@jitsify.app">Support</a>
+            <a href="mailto:hello@jitsify.app">Support</a>
             <a href="/terms">Terms of Service</a>
             <a href="/privacy">Privacy Policy</a>
         </div>
         <div class="copyright">&copy; 2026 Jitsify. All rights reserved.</div>
     </footer>
+    <script>
+        // Replace this URL with your Google Apps Script web app URL
+        const WAITLIST_URL = 'https://script.google.com/macros/s/AKfycbzGWNgujuBSyn8FtGWGON0MVxYUmp7yyqu-p5JRU5vuLj7TtwfZQV6rdjWX36Ch9N5J/exec';
+
+        async function submitWaitlist(e) {
+            e.preventDefault();
+            const email = document.getElementById('waitlistEmail').value;
+            const btn = document.getElementById('waitlistBtn');
+            const msg = document.getElementById('waitlistMessage');
+
+            btn.disabled = true;
+            btn.textContent = 'Joining...';
+            msg.textContent = '';
+            msg.className = 'waitlist-message';
+
+            try {
+                const response = await fetch(WAITLIST_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: email })
+                });
+                msg.textContent = "You're on the list! We'll be in touch.";
+                msg.className = 'waitlist-message success';
+                document.getElementById('waitlistEmail').value = '';
+            } catch (err) {
+                msg.textContent = 'Something went wrong. Please try again.';
+                msg.className = 'waitlist-message error';
+            }
+            btn.disabled = false;
+            btn.textContent = 'Join the Waitlist';
+        }
+    </script>
 </body>
 </html>
