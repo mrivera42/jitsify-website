@@ -460,6 +460,109 @@
             font-size: 12px;
         }
 
+        /* Early Access Banner */
+        .early-access-banner {
+            text-align: center;
+            padding: 12px 24px;
+            background: linear-gradient(90deg, rgba(96,165,250,0.15), rgba(129,140,248,0.15));
+            border-bottom: 1px solid rgba(96,165,250,0.2);
+        }
+
+        .early-access-banner p {
+            font-size: 13px;
+            font-weight: 600;
+            color: rgba(255,255,255,0.8);
+            letter-spacing: 0.5px;
+        }
+
+        .early-access-banner .pulse-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            margin-right: 8px;
+            vertical-align: middle;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(34,197,94,0.4); }
+            50% { opacity: 0.7; box-shadow: 0 0 0 6px rgba(34,197,94,0); }
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 80px 24px 100px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq h2 {
+            font-size: clamp(28px, 4vw, 40px);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .faq .subtitle {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding: 24px 0;
+        }
+
+        .faq-item:first-of-type {
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .faq-question {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            user-select: none;
+        }
+
+        .faq-question::after {
+            content: "+";
+            font-size: 22px;
+            font-weight: 400;
+            color: rgba(255,255,255,0.4);
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+
+        .faq-item.open .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1), padding 0.4s;
+            padding-top: 0;
+        }
+
+        .faq-item.open .faq-answer {
+            max-height: 200px;
+            padding-top: 16px;
+        }
+
+        .faq-answer p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.5);
+        }
+
         /* Contact */
         .contact {
             text-align: center;
@@ -551,6 +654,10 @@
     </style>
 </head>
 <body>
+    <div class="early-access-banner">
+        <p><span class="pulse-dot"></span>Early Access — Now Open &middot; Launching May 2026</p>
+    </div>
+
     <nav>
         <div class="logo">JITSIFY</div>
         <div class="nav-links">
@@ -659,6 +766,60 @@
                     <li>Save 16% vs monthly</li>
                     <li>Cancel anytime</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq" id="faq">
+        <h2 class="reveal">Frequently asked questions</h2>
+        <p class="subtitle reveal">Everything you need to know about JITSIFY.</p>
+
+        <div class="faq-item reveal stagger-1" onclick="this.classList.toggle('open')">
+            <div class="faq-question">When does JITSIFY launch?</div>
+            <div class="faq-answer">
+                <p>We're launching in May 2026 on iOS. Join the waitlist to get early access and be the first to know when we go live.</p>
+            </div>
+        </div>
+
+        <div class="faq-item reveal stagger-2" onclick="this.classList.toggle('open')">
+            <div class="faq-question">What is a flow diagram?</div>
+            <div class="faq-answer">
+                <p>A flow diagram is a visual map of a grappling exchange — positions, transitions, and decision points laid out so you can study your game at a glance. Think of it as a game plan you can actually see.</p>
+            </div>
+        </div>
+
+        <div class="faq-item reveal stagger-3" onclick="this.classList.toggle('open')">
+            <div class="faq-question">Do I need to be an experienced grappler to use JITSIFY?</div>
+            <div class="faq-answer">
+                <p>Not at all. JITSIFY is built for all levels — from white belts mapping their first techniques to black belts building complex game plans. The AI understands plain English, so just describe what you know.</p>
+            </div>
+        </div>
+
+        <div class="faq-item reveal stagger-4" onclick="this.classList.toggle('open')">
+            <div class="faq-question">How does the AI work?</div>
+            <div class="faq-answer">
+                <p>Describe a technique or exchange in your own words, and our AI parses it into a structured flow diagram with positions, transitions, and who's acting. It understands BJJ terminology natively.</p>
+            </div>
+        </div>
+
+        <div class="faq-item reveal stagger-5" onclick="this.classList.toggle('open')">
+            <div class="faq-question">Can I annotate my own rolling footage?</div>
+            <div class="faq-answer">
+                <p>Yes. Import any video, tag moves with timestamps and move types, and JITSIFY overlays your flow diagram right on top of the footage. You can also export annotated clips for Instagram.</p>
+            </div>
+        </div>
+
+        <div class="faq-item reveal stagger-6" onclick="this.classList.toggle('open')">
+            <div class="faq-question">Is there a free trial?</div>
+            <div class="faq-answer">
+                <p>Yes — the yearly plan includes a 3-day free trial. You can explore everything JITSIFY has to offer before being charged. Cancel anytime.</p>
+            </div>
+        </div>
+
+        <div class="faq-item reveal" onclick="this.classList.toggle('open')">
+            <div class="faq-question">What platforms is JITSIFY available on?</div>
+            <div class="faq-answer">
+                <p>JITSIFY is launching on iOS first (iPhone and iPad). Android and web versions are on the roadmap based on demand.</p>
             </div>
         </div>
     </section>
